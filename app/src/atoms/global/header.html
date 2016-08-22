@@ -1,0 +1,75 @@
+{% macro h1(text, textStyle, small, smallStyle) %}
+
+<h1 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h1>
+
+{% endmacro %}
+
+
+{% macro h2(text, textStyle, small, smallStyle) %}
+
+<h2 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h2>
+
+{% endmacro %}
+
+
+{% macro h3(text, textStyle, small, smallStyle) %}
+
+<h3 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h3>
+
+{% endmacro %}
+
+{% macro h4(text, textStyle, small, smallStyle) %}
+
+<h4 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h4>
+
+{% endmacro %}
+
+
+{% macro h5(text, textStyle, small, smallStyle) %}
+
+<h5 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h5>
+
+{% endmacro %}
+
+
+{% macro h6(text, textStyle, small, smallStyle) %}
+
+<h6 class="{{textStyle | default('')}}">
+	{{text}}
+
+	{% if small %}
+	<small class="{{smallStyle | default('')}}">{{small}}</small>	
+	{% endif %}
+</h6>
+
+{% endmacro %}

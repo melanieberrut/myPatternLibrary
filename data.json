@@ -1,0 +1,13 @@
+{
+  "test": "Melanie",
+  "posts": [
+    {
+      "title": "first post",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      "title": "another post",
+      "content": "Fugiat enim, at sit natus temporibus maxime repudiandae."
+    }
+  ]
+}

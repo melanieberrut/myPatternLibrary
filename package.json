@@ -1,0 +1,32 @@
+{
+  "name": "my-pattern-library",
+  "version": "1.0.0",
+  "description": "A Maintainable UI Style Guide",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melanieberrut/myPatternLibrary.git"
+  },
+  "author": "MB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melanieberrut/myPatternLibrary/issues"
+  },
+  "homepage": "https://github.com/melanieberrut/myPatternLibrary#readme",
+  "devDependencies": {
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-twig-render": "^1.7.3"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-output-twig": "^0.1.2",
+    "json5": "^0.5.0"
+  }
+}
