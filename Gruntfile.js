@@ -14,13 +14,60 @@ module.exports = function(grunt) {
         files: [
           'app/{,*/}*.html',
           'app/src/**/*.html',
-          'app/src/**/*.twig',
           'Gruntfile.js'
         ], 
         tasks: [
           'twigRender'
         ]
       },
+      js: {
+        options: {
+          livereload: 28754
+        },
+        files: [
+          'app/scripts/*.js'
+        ],
+        tasks: [
+          'copy'
+        ]
+      },
+      sass: {
+        options: {
+          livereload: 28754
+        },
+        files: [
+          'app/styles/sass/_{,*/}*.scss',
+          '!app/styles/sass/_{,*/}*.scss'
+        ],
+        tasks: [
+          'compass', 'copy'
+        ]
+      }
+    },
+
+
+    compass: {
+      dev: {
+        options: {
+          sassDir: 'app/styles/sass',
+          cssDir: 'app/styles/css'
+        }
+      }
+    },
+
+    copy: {
+      js: {
+        expand: true,
+        cwd: 'app/scripts/',
+        src: '*.js',
+        dest: 'dist/scripts/',
+      },
+      css: {
+        expand: true,
+        cwd: 'app/styles/css/',
+        src: '*.css',
+        dest: 'dist/styles/css/',
+      }
     },
 
     // twigRender / output_twig
@@ -46,9 +93,13 @@ module.exports = function(grunt) {
         livereload: {
             options: {
             port: 9000,
-            open: false
+            open: false,
+            base: 'dist'
           }
         }
+    },
+    clean: {
+      dist: ['dist']
     }
 
 
@@ -61,11 +112,14 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['connect']);
 
 
-  grunt.registerTask('serve', ['twigRender', 'connect', 'watch']);
+  grunt.registerTask('serve', ['clean', 'twigRender',  'connect', 'compass', 'copy', 'watch']);
 
   // grunt.loadNpmTasks('grunt-output-twig');
   
   grunt.loadNpmTasks('grunt-twig-render');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 };
