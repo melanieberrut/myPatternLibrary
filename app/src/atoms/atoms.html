@@ -1,18 +1,20 @@
 <!-- Dependencies -->
-{% import 'global/header.html' as header %}
+
 {% import 'buttons/buttons.html' as buttons %}
+{% import 'feedbacks/feedbacks.html' as feedbacks %}
+{% import 'forms/forms.html' as input %}
+{% import 'images/images.html' as images %}
+{% import 'text/header.html' as header %}
+{% import 'text/text.html' as text %}
 <!-- /end Dependencies -->
 
-{% include '../_page-header.html' %}
+{% include '../_page-header.html' with {'css': '../styles/css/bootstrap.css'} %}
 
 <div class="container">
 
-<pre class="breakpoints-data"></pre>
 	<div class="col-xs-12">
 
-		{{ buttons.button('My default button', 'button', 'default') }}
-
-		<hr>
+		
 		h1
 		{{ header.h1('Heading 1', null, 'small text', null) }}
 		<hr>
@@ -35,9 +37,186 @@
 		<br>
 		h6
 		{{ header.h6('Heading 6', null, 'small text', null) }}
-		<hr>
+
+		<hr><br><br>
+
+		{{ header.h2('Buttons', null, null, null) }}
+
+		{{ buttons.primary('Primary button', 'button') }}
+		{{ buttons.success('Success button', 'button') }}
+		{{ buttons.info('Info button', 'button') }}
+		{{ buttons.warning('Warning button', 'button') }}
+		{{ buttons.danger('Danger button', 'button') }}
+		{{ buttons.link('Link button', 'button') }}
+		
+		<hr><br><br>
+
+		{{ header.h2('Progress bar', null, null, null) }}
+
+		{{ feedbacks.progress('60', null) }}
+		{{ feedbacks.progress('40', true) }}
+
+		<hr><br><br>
+		
+		{{ header.h2('Form Elements', null, null, null) }}
+
+		
+		<form action="#">
+			{{ header.h4('Input', null, null, null) }}
+			{{ input.default('myId', 'input', 'Please type something here...') }}
+
+			{{ header.h4('textarea', null, null, null) }}
+			{{ input.textarea('myIdText', '4',  '20', 'Please type something here...') }}
+
+			{{ header.h4('Select', null, null, null) }}
+			{{ input.select('myIdSelect') }}
+
+			{{ header.h4('Radio', null, null, null) }}
+			{{ input.radio('Text for radio') }}
+
+			{{ header.h4('Checkbox', null, null, null) }}
+			{{ input.checkbox('Text for checkbox') }}
+		</form>
+
+		<hr><br><br>
+
+		{{ header.h2('Images', null, null, null) }}
+
+		{{ header.h4('Image', null, null, null) }}
+		{{ images.default('http://placehold.it/350x150') }}
+
+		{{ header.h4('Image rounded', null, null, null) }}
+		{{ images.rounded('http://placehold.it/350x150') }}
+
+		{{ header.h4('Image circle', null, null, null) }}
+		{{ images.circle('http://placehold.it/350x150') }}
+
+		{{ header.h4('Image thumbnail', null, null, null) }}
+		{{ images.thumbnail('http://placehold.it/350x150') }}
+
+		<hr><br><br>
+
+		{{ header.h2('Inline text', null, null, null) }}
+
+		{{ header.h4('Lead Paragraph', null, null, null) }}
+		<p>{{ text.lead('Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.') }}</p>
+		
+		{{ header.h4('Link', null, null, null) }}
+		<p>{{ text.link('My link', 'http://www.google.com') }}</p>
+
+		{{ header.h4('Small', null, null, null) }}
+		<p>{{ text.small('This is some small text') }}</p>
+
+		{{ header.h4('Underlined', null, null, null) }}
+		<p>{{ text.underlined('This line of text will render as underlined') }}</p>
+
+		{{ header.h4('Inserted', null, null, null) }}
+		<p>{{ text.inserted('This line of text is meant to be treated as an addition to the document.') }}</p>
+		
+		{{ header.h4('Strikethrough', null, null, null) }}
+		<p>{{ text.strikethrough('This line of text is meant to be treated as no longer accurate.') }}</p>
+
+		{{ header.h4('Deleted', null, null, null) }}
+		<p>{{ text.deleted('This line of text is meant to be treated as deleted text.') }}</p>
+		
+		{{ header.h4('Marked', null, null, null) }}
+		<p>You can use the mark tag to {{ text.marked('highlight') }} text.</p>
+
+		
+
+		{{ header.h4('Italic', null, null, null) }}
+		<p>{{ text.italic('Lorem ipsum dolor sit amet, consectetur adipisicing elit.') }}</p>
+
+		{{ header.h4('Bold', null, null, null) }}
+		<p>Lorem ipsum dolor sit amet {{ text.bold('consectetur') }} adipisicing elit.</p>
+		
+		{{ header.h4('Preformatted', null, null, null) }}
+		<p>{{ text.preformatted('P R E F O R M A T T E D T E X T ! " # $ % & ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~') }}</p>
+		
+		{{ header.h4('Sample output', null, null, null) }}
+		<p>{{ text.var('This text is meant to be treated as sample output from a computer program.') }}</p>
+
+		{{ header.h4('Variables', null, null, null) }}
+		<p>{{ text.var('y') }} + {{ text.var('x') }} = {{ text.var('yx') }}</p>
+
+		<br><br>
+
+		{{ header.h2('Text variants', null, null, null) }}
+
+		{{ header.h4('muted', null, null, null) }}
+		<p>{{ text.muted('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('primary', null, null, null) }}
+		<p>{{ text.primary('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('success', null, null, null) }}
+		<p>{{ text.success('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('info', null, null, null) }}
+		<p>{{ text.info('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('warning', null, null, null) }}
+		<p>{{ text.warning('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('danger', null, null, null) }}
+		<p>{{ text.danger('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		<br><br>
+
+		{{ header.h2('Text background variants', null, null, null) }}
+
+		{{ header.h4('primary', null, null, null) }}
+		<p>{{ text.bgprimary('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('success', null, null, null) }}
+		<p>{{ text.bgsuccess('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('info', null, null, null) }}
+		<p>{{ text.bginfo('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('warning', null, null, null) }}
+		<p>{{ text.bgwarning('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+
+		{{ header.h4('danger', null, null, null) }}
+		<p>{{ text.bgdanger('Lorem ipsum dolor sit amet, consectetur adipisicing elit') }}</p>
+		
+		<br><br>
+
+		{{ header.h4('Caret', null, null, null) }}
+		<p>{{ text.caret }}</p>
+
+		<br><br>
+
+		{{ header.h4('initial', null, null, null) }}
+		<p>{{ text.initial('HTML', 'HyperText Markup Language') }}</p>
+		{{ header.h4('abbreviation', null, null, null) }}
+		<p>{{ text.abbreviation('HTML', 'HyperText Markup Language') }}</p>
+		
+		<br><br>
 
 
+		{{ header.h2('Text transform', null, null, null) }}
+		{{ header.h4('Lowercase', null, null, null) }}
+		<p>{{ text.lowercase('Lowercased text') }}</p>
+		{{ header.h4('Uppercase', null, null, null) }}
+		<p>{{ text.uppercase('Uppercase text') }}</p>
+		{{ header.h4('Capitalise', null, null, null) }}
+		<p>{{ text.capitalise('Capitalised text here') }}</p>
+
+		<br><br>
+		
+		{{ header.h2('Text alignement', null, null, null) }}
+
+		{{ text.left('Left aligned text.') }}
+		{{ text.center('Center aligned text.') }}
+		{{ text.right('Right aligned text.') }}
+		{{ text.justify('Justified text.') }}
+		{{ text.nowrap('No wrap text.') }}
+
+
+		<hr><br><br>
+
+		<hr><br><br>
 	</div>
 
 </div>

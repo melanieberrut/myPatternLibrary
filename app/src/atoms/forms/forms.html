@@ -1,0 +1,31 @@
+{% macro default(id, type, placeholder) %}
+	<input type="{{type}}" class="form-control" id="{{id}}" {% if placeholder == true %} placeholder="{{placeholder}}"{% endif %}>
+{% endmacro %}
+
+{% macro textarea(id, rows, cols, placeholder) %}
+	<textarea class="form-control" id="{{id}}" 
+		{% if placeholder == true %} placeholder="{{placeholder}}"{% endif %}
+		{% if rows == true %} rows="{{rows}}"{% endif %}
+		{% if cols == true %} cols="{{cols}}"{% endif %}
+	></textarea>
+{% endmacro %}
+
+{% macro select(id) %}
+	<select 
+		{% if id == true %} id="{{id}}" {% endif %} 
+		class="form-control">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+{% endmacro %}
+
+{% macro checkbox(text,id) %}
+<input type="checkbox" id="{{id}}" value="option1"> {{text}}
+{% endmacro %}
+
+{% macro radio(text,id) %}
+<input type="radio" id="{{id}}" value="option1"> {{text}}
+{% endmacro %}

@@ -1,0 +1,157 @@
+{% macro lead(text) %}
+<p class="lead">
+	{{text}}
+</p>
+{% endmacro %}
+
+{% macro link(text, href) %}
+<a href="{{href}}">{{text}}</a>
+{% endmacro %}
+
+{% macro italic(text) %}
+<em>{{text}}</em>
+{% endmacro %}
+
+{% macro bold(text) %}
+<strong>{{text}}</strong>
+{% endmacro %}
+
+{% macro small(text) %}
+<small>{{text}}</small>
+{% endmacro %}
+
+{% macro underlined(text) %}
+<small>{{text}}</small>
+{% endmacro %}
+
+{% macro inserted(text) %}
+<small>{{text}}</small>
+{% endmacro %}
+
+
+{% macro strikethrough(text) %}
+<s>{{text}}</s>
+{% endmacro %}
+
+{% macro deleted(text) %}
+<del>{{text}}</del>
+{% endmacro %}
+
+{% macro marked(text) %}
+<mark>{{text}}</mark>
+{% endmacro %}
+
+
+{% macro preformatted(text) %}
+<pre>{{text}}</pre>
+{% endmacro %}
+
+{% macro var(text) %}
+<var>{{text}}</var>
+{% endmacro %}
+
+{% macro samp(text) %}
+<samp>{{text}}</samp>
+{% endmacro %}
+
+
+
+{% macro muted(text) %}
+<span class="text-muted">{{text}}</span>
+{% endmacro %}
+
+{% macro primary(text) %}
+<span class="text-primary">{{text}}</span>
+{% endmacro %}
+
+{% macro success(text) %}
+<span class="text-success">{{text}}</span>
+{% endmacro %}
+
+{% macro info(text) %}
+<span class="text-info">{{text}}</span>
+{% endmacro %}
+
+{% macro warning(text) %}
+<span class="text-warning">{{text}}</span>
+{% endmacro %}
+
+{% macro danger(text) %}
+<span class="text-danger">{{text}}</span>
+{% endmacro %}
+
+
+
+{% macro bgprimary(text) %}
+<span class="bg-primary">{{text}}</span>
+{% endmacro %}
+
+{% macro bgsuccess(text) %}
+<span class="bg-success">{{text}}</span>
+{% endmacro %}
+
+{% macro bginfo(text) %}
+<span class="bg-info">{{text}}</span>
+{% endmacro %}
+
+{% macro bgwarning(text) %}
+<span class="bg-warning">{{text}}</span>
+{% endmacro %}
+
+{% macro bgdanger(text) %}
+<span class="bg-danger">{{text}}</span>
+{% endmacro %}
+
+
+
+{% macro caret() %}
+<span class="caret"></span>
+{% endmacro %}
+
+
+
+
+{% macro initial(text, title) %}
+<abbr title="{{title}}" class="initialism">{{text}}</abbr>
+{% endmacro %}
+
+{% macro abbreviation(text, title) %}
+<abbr title="{{title}}">{{text}}</abbr>
+{% endmacro %}
+
+
+
+{% macro lowercase(text) %}
+<span class="text-lowercase">{{text}}</span>
+{% endmacro %}
+
+{% macro uppercase(text) %}
+<span class="text-uppercase">{{text}}</span>
+{% endmacro %}
+
+{% macro capitalise(text) %}
+<span class="text-capitalize">{{text}}</span>
+{% endmacro %}
+
+
+
+{% macro left(text) %}
+<p class="text-left">{{text}}</p>
+{% endmacro %}
+
+{% macro center(text) %}
+<p class="text-center">{{text}}</p>
+{% endmacro %}
+
+{% macro right(text) %}
+<p class="text-right">{{text}}</p>
+{% endmacro %}
+
+{% macro justify(text) %}
+<p class="text-justify">{{text}}</p>
+{% endmacro %}
+
+{% macro nowrap(text) %}
+<p class="text-nowrap">{{text}}</p>
+{% endmacro %}
+

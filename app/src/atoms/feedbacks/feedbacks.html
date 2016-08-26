@@ -1,0 +1,11 @@
+{% macro progress(percent,label) %}
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percent}}%;">
+    
+    {% if label == true %}
+    {{percent}}%
+    {% endif %}
+	<span class="sr-only">{{percent}}% Complete</span>
+  </div>
+</div>
+{% endmacro %}

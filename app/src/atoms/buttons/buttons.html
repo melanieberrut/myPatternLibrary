@@ -1,3 +1,27 @@
-{% macro button(text, type, variant) %}
-<button type="{{type}}" class="btn btn-{{variant}}">{{text}}</button>
+{% macro default(text, type) %}
+<button type="{{type}}" class="btn btn-default">{{text}}</button>
+{% endmacro %}
+
+{% macro secondary(text, type) %}
+<button type="{{type}}" class="btn btn-secondary">{{text}}</button>
+{% endmacro %}
+
+{% macro success(text, type) %}
+<button type="{{type}}" class="btn btn-success">{{text}}</button>
+{% endmacro %}
+
+{% macro info(text, type) %}
+<button type="{{type}}" class="btn btn-info">{{text}}</button>
+{% endmacro %}
+
+{% macro warning(text, type) %}
+<button type="{{type}}" class="btn btn-warning">{{text}}</button>
+{% endmacro %}
+
+{% macro danger(text, type) %}
+<button type="{{type}}" class="btn btn-danger">{{text}}</button>
+{% endmacro %}
+
+{% macro link(text, type) %}
+<button type="{{type}}" class="btn btn-link">{{text}}</button>
 {% endmacro %}

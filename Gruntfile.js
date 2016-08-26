@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
         files: [
           'app/{,*/}*.html',
-          'app/src/**/*.html',
+          'app/src/{,*/}*.html',
           'Gruntfile.js'
         ], 
         tasks: [
@@ -81,7 +81,12 @@ module.exports = function(grunt) {
           data: 'data.json',
           expand: true,
           cwd: 'app/src/',
-          src: ['{,*/}*.twig', '{,*/}*.html', '!{,*/}_*.twig', '!{,*/}_*.html'], // Match twig templates but not partials
+          src: [
+            '{,*/}*.twig', 
+            '{,*/}*/{,*/}*.html', 
+            '!{,*/}_*.twig', 
+            '!{,*/}_*.html'
+          ], // Match twig templates but not partials
           // src: '{,*/}*.html',
           dest: 'dist/',
           ext: '.html'
